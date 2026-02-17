@@ -202,14 +202,41 @@
             }
         }
     </style>
+
+<style id="responsive-patch">
+* { box-sizing: border-box; }
+body { padding: 10px !important; }
+.quiz-stats { flex-wrap: wrap; gap: 8px; }
+.stat { font-size: 0.85em; }
+.question { padding: 12px !important; }
+.choices li { word-break: break-word; }
+.navigation { flex-wrap: wrap; gap: 10px; }
+.nav-btn { text-align: center; }
+table { width: 100% !important; overflow-x: auto; display: block; }
+img { max-width: 100% !important; height: auto !important; }
+span[style*="font-size"] { font-size: 1em !important; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.4em; }
+  .quiz-header h2 { font-size: 1.1em; }
+  .question-text { font-size: 0.95em; }
+  .choices li { padding: 8px 10px; font-size: 0.9em; }
+  .feedback { font-size: 0.88em; }
+  .nav-btn { width: 100%; }
+  .page-info { width: 100%; text-align: center; }
+}
+</style>
+
 </head>
 <body>
     <div id="top">
         <h1>Quiz Results</h1>
         <div class="part-info">Part 63 of 85 (Quiz Attempts 621-630)</div>
         <div class="navigation">
-            <a href="file:///C:/Users/japit/projects/didi/quizzes/quiz_results_62.html" class="nav-btn prev">← Previous</a><span class="page-info">Part 63 of 85</span><a href="file:///C:/Users/japit/projects/didi/quizzes/quiz_results_64.html" class="nav-btn next">Next →</a>
-        </div>
+        <a href="Quiz%20Results%20-%20Part%2062.html" class="nav-btn prev">← Prev</a>
+        <span class="page-info">Part 63 of 85</span>
+        <a href="Quiz%20Results%20-%20Part%2064.html" class="nav-btn next">Next →</a>
+    </div>
     </div>
     
     
@@ -5334,7 +5361,9 @@
             
     
     <div class="navigation">
-        <a href="file:///C:/Users/japit/projects/didi/quizzes/quiz_results_62.html" class="nav-btn prev">← Previous</a><span class="page-info">Part 63 of 85</span><a href="file:///C:/Users/japit/projects/didi/quizzes/quiz_results_64.html" class="nav-btn next">Next →</a>
+        <a href="Quiz%20Results%20-%20Part%2062.html" class="nav-btn prev">← Prev</a>
+        <span class="page-info">Part 63 of 85</span>
+        <a href="Quiz%20Results%20-%20Part%2064.html" class="nav-btn next">Next →</a>
     </div>
     
     <footer>
