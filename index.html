@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Results</title>
+  <title>Quiz Dashboard</title>
   <style>
     :root {
       --primary: #2563eb;
@@ -19,7 +19,7 @@
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 40px 20px;
       line-height: 1.5;
@@ -42,7 +42,7 @@
       font-size: 1.1rem;
     }
 
-    /* Responsive Grid */
+    /* Grid Layout */
     ul {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -52,7 +52,7 @@
     }
 
     /* Card Styling */
-    a {
+    a.quiz-link {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -67,27 +67,66 @@
       text-align: center;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      cursor: pointer;
     }
 
-    a:hover {
+    a.quiz-link:hover {
       transform: translateY(-4px);
       border-color: var(--primary);
       box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.15);
       color: var(--primary);
     }
 
-    /* Quiz Badge */
-    a::before {
+    a.quiz-link::before {
       content: "QUIZ";
       display: block;
       background: var(--accent);
       color: var(--accent-text);
-      font-size: 0.65rem;
-      font-weight: 800;
+      font-size: 0.65rem;      font-weight: 800;
       padding: 3px 10px;
       border-radius: 20px;
       margin-bottom: 12px;
       border: 1px solid #dcfce7;
+    }
+
+    /* --- RESPONSIVE MODAL STYLES --- */
+    #quizModal {
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: white; 
+      z-index: 10000; 
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 12px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .close-btn {
+      padding: 8px 16px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    #quizFrame {
+      width: 100%;
+      flex-grow: 1;
+      border: none;
     }
 
     @media (max-width: 480px) {
@@ -96,6 +135,7 @@
         gap: 12px;
       }
       h1 { font-size: 1.75rem; }
+      body { padding: 20px 15px; }
     }
   </style>
 </head>
@@ -103,131 +143,54 @@
 
 <header>
   <h1>Quiz Results</h1>
-  <p class="subtitle">Select a quiz part below to review the performance data.</p>
+  <p class="subtitle">Click a part to view detailed performance metrics.</p>
 </header>
 
-<ul>
-  <li><a href="Quiz%20Results%20-%20Part%201.html">Part 1</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%202.html">Part 2</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%203.html">Part 3</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%204.html">Part 4</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%205.html">Part 5</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%206.html">Part 6</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%207.html">Part 7</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%208.html">Part 8</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%209.html">Part 9</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2010.html">Part 10</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2011.html">Part 11</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2012.html">Part 12</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2013.html">Part 13</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2014.html">Part 14</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2015.html">Part 15</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2016.html">Part 16</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2017.html">Part 17</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2018.html">Part 18</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2019.html">Part 19</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2020.html">Part 20</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2021.html">Part 21</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2022.html">Part 22</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2023.html">Part 23</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2024.html">Part 24</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2025.html">Part 25</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2026.html">Part 26</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2027.html">Part 27</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2028.html">Part 28</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2029.html">Part 29</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2030.html">Part 30</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2031.html">Part 31</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2032.html">Part 32</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2033.html">Part 33</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2034.html">Part 34</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2035.html">Part 35</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2036.html">Part 36</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2037.html">Part 37</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2038.html">Part 38</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2039.html">Part 39</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2040.html">Part 40</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2041.html">Part 41</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2042.html">Part 42</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2043.html">Part 43</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2044.html">Part 44</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2045.html">Part 45</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2046.html">Part 46</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2047.html">Part 47</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2048.html">Part 48</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2049.html">Part 49</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2050.html">Part 50</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2051.html">Part 51</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2052.html">Part 52</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2053.html">Part 53</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2054.html">Part 54</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2055.html">Part 55</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2056.html">Part 56</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2057.html">Part 57</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2058.html">Part 58</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2059.html">Part 59</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2060.html">Part 60</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2061.html">Part 61</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2062.html">Part 62</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2063.html">Part 63</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2064.html">Part 64</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2065.html">Part 65</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2066.html">Part 66</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2067.html">Part 67</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2068.html">Part 68</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2069.html">Part 69</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2070.html">Part 70</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2071.html">Part 71</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2072.html">Part 72</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2073.html">Part 73</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2074.html">Part 74</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2075.html">Part 75</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2076.html">Part 76</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2077.html">Part 77</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2078.html">Part 78</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2079.html">Part 79</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2080.html">Part 80</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2081.html">Part 81</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2082.html">Part 82</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2083.html">Part 83</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2084.html">Part 84</a></li>
-  <li><a href="Quiz%20Results%20-%20Part%2085.html">Part 85</a></li>
+<ul id="quizList">
+  <script>
+    const list = document.getElementById('quizList');
+    for (let i = 1; i <= 85; i++) {
+      const li = document.createElement('li');
+      const fileName = `Quiz%20Results%20-%20Part%20${i}.html`;
+      li.innerHTML = `<a href="${fileName}" class="quiz-link">Part ${i}</a>`;
+      list.appendChild(li);
+    }
+  </script>
 </ul>
 
+<div id="quizModal">
+  <div class="modal-header">
+    <strong id="modalTitle">Loading Results...</strong>
+    <button class="close-btn" onclick="closeQuiz()">CLOSE [X]</button>
+  </div>
+  <iframe id="quizFrame" name="quizFrame"></iframe>
+</div>
+
 <script>
-  // --- TELEGRAM SETTINGS ---
-  const TG_TOKEN = "YOUR_BOT_TOKEN_HERE"; 
-  const TG_CHAT_ID = "YOUR_CHAT_ID_HERE";
-  const startTime = Date.now();
+  const modal = document.getElementById('quizModal');
+  const frame = document.getElementById('quizFrame');
+  const modalTitle = document.getElementById('modalTitle');
 
-  async function sendTelegram(message) {
-    const url = `https://api.telegram.org/bot${TG_TOKEN}/sendMessage`;
-    try {
-      await fetch(url, { 
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, 
-        body: JSON.stringify({
-          chat_id: TG_CHAT_ID,
-          text: message,
-          parse_mode: "Markdown"
-        }),
-        keepalive: true 
-      });
-    } catch (e) {}
+  // Intercept clicks to open in the Modal
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('quiz-link')) {
+      e.preventDefault();
+      const url = e.target.getAttribute('href');
+      const title = e.target.innerText;
+      
+      modalTitle.innerText = "Viewing: " + title;
+      frame.src = url;
+      modal.style.display = 'flex';
+      // Prevent body scrolling while modal is open
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  function closeQuiz() {
+    modal.style.display = 'none';
+    frame.src = ""; // Stop the iframe content
+    document.body.style.overflow = 'auto'; // Restore scroll
   }
-
-  // Notify on entry
-  window.addEventListener('load', () => {
-    sendTelegram(`📝 *Quiz Site Visited*\nTime: ${new Date().toLocaleTimeString()}`);
-  });
-
-  // Notify on exit
-  window.addEventListener('beforeunload', () => {
-    const totalSecs = Math.floor((Date.now() - startTime) / 1000);
-    const m = Math.floor(totalSecs / 60);
-    const s = totalSecs % 60;
-    sendTelegram(`🏁 *Quiz Site Left*\nDuration: ${m}m ${s}s`);
-  });
 </script>
 
 </body>
